@@ -15,7 +15,7 @@ class BottomNav extends StatelessWidget {
           onTap: (newIndex) {
             Home.bottomnotifier.value = newIndex;
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.flutter_dash), label: 'Transaction'),
             BottomNavigationBarItem(

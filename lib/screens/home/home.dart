@@ -20,6 +20,16 @@ class Home extends StatelessWidget {
               builder: (BuildContext ctx, int updatedindex, Widget? _) {
                 return _pages[updatedindex];
               })),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (bottomnotifier.value == 0) {
+            print('trans');
+          } else {
+            print('cate');
+          }
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sample_6/screens/category/expense_cat_list.dart';
+import 'package:sample_6/screens/category/income_cat_list.dart';
 
 class ScreenCategory extends StatefulWidget {
   const ScreenCategory({super.key});
@@ -37,8 +39,8 @@ class _ScreenCategoryState extends State<ScreenCategory>
           child: TabBarView(
             controller: _tabcontoller,
             children: [
-              Text('Expense'),
-              Text('Income'),
+              Income(),
+              Expense(),
             ],
           ),
         )

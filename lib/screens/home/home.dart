@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
             print('cate');
           }
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

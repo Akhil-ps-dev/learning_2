@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_6/db/category/category_popup.dart';
 import 'package:sample_6/screens/category/cate.dart';
 import 'package:sample_6/screens/home/widgets/bottom_nav.dart';
 import 'package:sample_6/screens/transaction/trans.dart';
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
           if (bottomnotifier.value == 0) {
             print('trans');
           } else {
-            print('cate');
+            showPopUp(context);
           }
         },
         child: const Icon(Icons.add),

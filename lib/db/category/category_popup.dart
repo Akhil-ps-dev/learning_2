@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_6/db/category/cartegory_db.dart';
 
 import 'package:sample_6/models/category_model.dart';
 import 'package:sample_6/screens/category/income_cat_list.dart';
@@ -7,6 +8,8 @@ ValueNotifier<CategoryEnum> selectedCategoryNotifier =
     ValueNotifier(CategoryEnum.income);
 
 Future<void> showPopUp(BuildContext ctx) async {
+  final _nameEditingController = TextEditingController();
+
   return showDialog(
     context: ctx,
     builder: (ctx1) {
@@ -29,7 +32,21 @@ Future<void> showPopUp(BuildContext ctx) async {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              final _name = _nameEditingController.text;
+              if (_name.isEmpty) {
+                return;
+              }
+              final _type = selectedCategoryNotifier.value;
+
+              final _category = CategoryModel(
+                id: DateTime.now().millisecondsSinceEpoch.toString(),
+                name: _name,
+                type: _type,
+              );
+              CategoryDb().insertAllCategories(_category);
+              Navigator.of(ctx1).pop();
+            },
             child: Text(
               'add',
             ),
